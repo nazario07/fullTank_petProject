@@ -20,13 +20,16 @@ public class User {
     private String lastName;
     @Column(name = "email")
     private String email;
+    @Column(name = "password")
+    private String password;
     @Column(name = "age")
     private int age;
 
-    public User(String firstName, String lastName, String email, int age) {
+    public User(String firstName, String lastName, String email, String password, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.password = password;
         this.age = age;
     }
 }
