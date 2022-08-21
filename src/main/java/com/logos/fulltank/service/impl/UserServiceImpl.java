@@ -3,6 +3,7 @@ package com.logos.fulltank.service.impl;
 import com.logos.fulltank.dao.UserDao;
 import com.logos.fulltank.entity.User;
 import com.logos.fulltank.exception.IncorrectCredsExceptions;
+import com.logos.fulltank.exception.UserAlreadyExistException;
 import com.logos.fulltank.exception.UserNotFoundException;
 import com.logos.fulltank.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -22,9 +23,39 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User createUser(User user) {
-        log.info("Created new user" + user.toString());
-        return userDao.save(user);
+    public User createUser(User user) throws UserAlreadyExistException, UserNotFoundException, SQLException {
+        if (getParticipantByEmail(user.getEmail()) == null) {
+            log.info("Created new user" + user.toString());
+            return userDao.save(user);
+        } else {
+            log.error("User with email " + user.getEmail() + " is already exist");
+            throw new UserAlreadyExistException("User with email " + user.getEmail() + " is already exist!");
+        }
+
+    }
+
+    @Override
+    public User getParticipantById(int id) throws UserNotFoundException {
+        Optional<User> byId = userDao.findById(id);
+        if (byId.isPresent()) {
+            log.info("Information about user with id " + id + " ready for you");
+            return byId.get();
+        } else {
+            log.error("User with id " + id + " is not exist");
+            throw new UserNotFoundException("User with id " + id + " is not exist");
+        }
+    }
+
+    @Override
+    public User getParticipantByEmail(String email) throws UserNotFoundException, SQLException {
+        Optional<User> byId = userDao.findUserByEmail(email);
+        if (byId.isPresent()) {
+            log.info("Information about user with id " + email + " ready for you");
+            return byId.get();
+        } else {
+            log.error("User with id " + email + " is not exist");
+            throw new UserNotFoundException("User with id " + email + " is not exist");
+        }
     }
 
     @Override
