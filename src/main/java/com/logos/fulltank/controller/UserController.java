@@ -27,6 +27,15 @@ public class UserController {
 
     @GetMapping
     public String enterToProgram() {
+        return "mainPage";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+    @GetMapping("/registration")
+    public String toRegister() {
         return "registration";
     }
 

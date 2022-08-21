@@ -1,5 +1,6 @@
 package com.logos.fulltank.dto;
 
+import com.logos.fulltank.entity.Role;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -18,4 +19,6 @@ public class UserDto implements Serializable {
     private String password;
 
     private int age;
+
+    private Role role;
 }

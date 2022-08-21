@@ -9,9 +9,13 @@ import java.sql.SQLException;
 
 public interface UserService {
     User createUser(User user) throws UserNotFoundException, SQLException, UserAlreadyExistException;
+
     User getParticipantById(int id) throws UserNotFoundException;
-    User getParticipantByEmail(String email) throws UserNotFoundException, SQLException;
+
+    boolean checkIfExist(String email) throws SQLException;
+
     User login(String email, String password) throws IncorrectCredsExceptions;
+
     void deleteUser(int id) throws UserNotFoundException;
 
 }

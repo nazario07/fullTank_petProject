@@ -25,11 +25,16 @@ public class User {
     @Column(name = "age")
     private int age;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Role role;
+
     public User(String firstName, String lastName, String email, String password, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.age = age;
+        this.role=Role.USER;
     }
 }

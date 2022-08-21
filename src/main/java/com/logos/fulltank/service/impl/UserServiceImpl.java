@@ -24,14 +24,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User createUser(User user) throws UserAlreadyExistException, UserNotFoundException, SQLException {
-        if (getParticipantByEmail(user.getEmail()) == null) {
+        if (checkIfExist(user.getEmail())) {
             log.info("Created new user" + user.toString());
             return userDao.save(user);
         } else {
             log.error("User with email " + user.getEmail() + " is already exist");
             throw new UserAlreadyExistException("User with email " + user.getEmail() + " is already exist!");
         }
-
     }
 
     @Override
@@ -47,15 +46,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getParticipantByEmail(String email) throws UserNotFoundException, SQLException {
+    public boolean checkIfExist(String email) throws SQLException{
         Optional<User> byId = userDao.findUserByEmail(email);
-        if (byId.isPresent()) {
-            log.info("Information about user with id " + email + " ready for you");
-            return byId.get();
-        } else {
-            log.error("User with id " + email + " is not exist");
-            throw new UserNotFoundException("User with id " + email + " is not exist");
-        }
+        return byId.isEmpty();
     }
 
     @Override
