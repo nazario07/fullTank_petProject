@@ -6,7 +6,7 @@ import com.logos.fulltank.exception.PumpNotFoundException;
 import java.util.List;
 
 public interface PumpService {
-    Pump createProduct(Pump pump);
+    Pump createPump(Pump pump);
     List<Pump> getAll();
     Pump getById(int id) throws PumpNotFoundException;
     void deletePump(int id) throws PumpNotFoundException;

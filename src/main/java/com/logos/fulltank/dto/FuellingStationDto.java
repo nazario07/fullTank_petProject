@@ -17,6 +17,8 @@ public class FuellingStationDto  implements Serializable {
 
     private String providerOrBrand;
 
+    private  int numberOfPumps;
+
     private double latitude;
 
     private double longitude;

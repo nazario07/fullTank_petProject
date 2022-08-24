@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/style/workPage.css}">
+    <title>Work Page</title>
+</head>
+<body>
+<header>
+
+</header>
+<h1>Hello <span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span> </h1>
+<h2>Your personal info:</h2>
+<div class="user_block">
+    <ul>
+        <li>Your id: <span th:text="${user.id}"></span> </li>
+        <li>Your email: <span th:text="${user.email}"></span> </li>
+        <li>Your password: <span th:text="${user.password}"></span> </li>
+        <li>Your age: <span th:text="${user.age}"></span> </li>
+    </ul>
+</div>
+
+
+
+
+</body>
+</html>

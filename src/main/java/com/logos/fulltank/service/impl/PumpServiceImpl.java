@@ -22,7 +22,7 @@ public class PumpServiceImpl implements PumpService {
     }
 
     @Override
-    public Pump createProduct(Pump pump) {
+    public Pump createPump(Pump pump) {
         return pumpDao.save(pump);
     }
 

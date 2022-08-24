@@ -18,6 +18,9 @@ public class FuellingStation {
     @Column(name = "brand")
     private String providerOrBrand;
 
+    @Column(name = "number_of_pumps")
+    private  int numberOfPumps;
+
     @Column(name = "latitude")
     private double latitude;
 
@@ -28,7 +31,7 @@ public class FuellingStation {
     private String address;
 
     @Column(name = "available")
-    private boolean available;
+    private boolean available = true;
 
     @OneToMany(mappedBy = "fuellingStation",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Product> products;
@@ -36,5 +39,11 @@ public class FuellingStation {
     @OneToMany(mappedBy = "fuellingStation", fetch = FetchType.LAZY)
     private  Set<Pump> pumpSet;
 
-
+    public FuellingStation(String providerOrBrand, int numberOfPumps, double latitude, double longitude, String address) {
+        this.providerOrBrand = providerOrBrand;
+        this.numberOfPumps = numberOfPumps;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.address = address;
+    }
 }

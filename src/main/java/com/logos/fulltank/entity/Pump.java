@@ -19,7 +19,7 @@ public class Pump {
     private String pumpName;
 
     @Column(name = "available")
-    private boolean available;
+    private boolean available= true;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -31,4 +31,8 @@ public class Pump {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private FuellingStation fuellingStation;
 
+    public Pump(String pumpName, FuellingStation fuellingStation) {
+        this.pumpName = pumpName;
+        this.fuellingStation = fuellingStation;
+    }
 }

@@ -1,9 +1,11 @@
 package com.logos.fulltank.controller;
 
 import com.logos.fulltank.entity.User;
+import com.logos.fulltank.exception.IncorrectCredsExceptions;
 import com.logos.fulltank.exception.UserAlreadyExistException;
 import com.logos.fulltank.exception.UserNotFoundException;
 import com.logos.fulltank.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping
+@Slf4j(topic = "User Controller")
 public class UserController {
 
     private final UserService userService;
@@ -27,13 +30,14 @@ public class UserController {
 
     @GetMapping
     public String enterToProgram() {
-        return "mainPage";
+        return "workPage";
     }
 
     @GetMapping("/login")
     public String login() {
         return "login";
     }
+
     @GetMapping("/registration")
     public String toRegister() {
         return "registration";
@@ -54,10 +58,21 @@ public class UserController {
         user.setAge(age);
         User saved = userService.createUser(user);
         model.addAttribute("user", saved);
-        return "userPage";
+        return "workPage";
     }
 
-//    @PostMapping("/login")
-//    public String signIn()
-
+    @PostMapping("/login")
+    public String signIn(Model model,
+                         @RequestParam String email,
+                         @RequestParam String password) {
+        User user = null;
+        try {
+            user = userService.login(email, password);
+            model.addAttribute("user", user);
+            return "workPage";
+        } catch (IncorrectCredsExceptions e) {
+            log.error("Incorrect email or password");
+            throw new RuntimeException(e);
+        }
+    }
 }
