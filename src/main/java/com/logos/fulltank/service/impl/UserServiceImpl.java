@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getParticipantById(int id) throws UserNotFoundException {
+    public User getUserById(int id) throws UserNotFoundException {
         Optional<User> byId = userDao.findById(id);
         if (byId.isPresent()) {
             log.info("Information about user with id " + id + " ready for you");

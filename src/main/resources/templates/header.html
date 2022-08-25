@@ -9,19 +9,19 @@
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
             crossorigin="anonymous"></script>
 
-<!--     Awesom-->
+<!--     Awesome-->
     <script src="https://kit.fontawesome.com/b0166f9752.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body th:fragment="header">
 <header class="p-3 bg-dark text-white">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="w" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <a href="workPage.html" th:href="@{http://localhost:8080/workPage}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                 <img class="bi me-2" width="45" height="36" role="img" aria-label="Bootstrap" src="../static/img/fuel.webp">
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="cabinet.html" class="nav-link px-2 text-white">Home</a></li>
+                <li><a href="cabinet.html" th:href="@{http://localhost:8080/workPage}" class="nav-link px-2 text-white">Home</a></li>
 
 <!--                <%-->
 <!--                Object role = session.getAttribute("role");-->
@@ -31,12 +31,9 @@
 <!--                }-->
 <!--                }-->
 <!--                %>-->
-                <script>
 
-                    if()
-                </script>
                 <li><a href="https://www.google.com.ua/maps/" class="nav-link px-2 text-white">Google Maps</a></li>
-                <li><a href="cabinet.html" class="nav-link px-2 text-white">Cabinet</a></li>
+                <li><a href="cabinet.html" th:href="@{http://localhost:8080/cabinet}" class="nav-link px-2 text-white">Cabinet</a></li>
             </ul>
 
 

@@ -5,6 +5,9 @@ import com.logos.fulltank.entity.FuellingStation;
 import com.logos.fulltank.exception.FuellingStationNotFoundException;
 import com.logos.fulltank.service.FuellingStationService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.Store;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -52,6 +55,19 @@ public class FuellingStationServiceImpl implements FuellingStationService {
             log.error("Fuelling station with id " + id + " is not exist");
             throw new FuellingStationNotFoundException("Fuelling station with id " + id + " is not exist");
         }
+    }
+
+    @Override
+    public FuellingStation getClosestStation(double latitude, double longitude) {
+        return fuellingStationDao.findClosestStation(latitude,longitude);
+
+    }
+
+    @Override
+    public List<FuellingStation> getListFuellingStationsInRadius(double latitude, double longitude, double radius) {
+        return fuellingStationDao.findClosestFuellingStationInRadius(latitude,longitude,radius);
+
+
     }
 
 }

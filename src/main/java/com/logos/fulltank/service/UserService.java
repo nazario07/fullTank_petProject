@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public interface UserService {
     User createUser(User user) throws UserNotFoundException, SQLException, UserAlreadyExistException;
 
-    User getParticipantById(int id) throws UserNotFoundException;
+    User getUserById(int id) throws UserNotFoundException;
 
     boolean checkIfExist(String email) throws SQLException;
 

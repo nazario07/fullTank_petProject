@@ -1,17 +1,16 @@
 package com.logos.fulltank.controller;
 
+import com.logos.fulltank.entity.FuellingStation;
 import com.logos.fulltank.entity.User;
 import com.logos.fulltank.exception.IncorrectCredsExceptions;
 import com.logos.fulltank.exception.UserAlreadyExistException;
 import com.logos.fulltank.exception.UserNotFoundException;
+import com.logos.fulltank.service.FuellingStationService;
 import com.logos.fulltank.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -24,13 +23,18 @@ public class UserController {
 
     private final UserService userService;
 
-    public UserController(UserService userService) {
+    private final FuellingStationService fuellingStationService;
+
+
+    public UserController(UserService userService, FuellingStationService fuellingStationService) {
         this.userService = userService;
+        this.fuellingStationService = fuellingStationService;
     }
+
 
     @GetMapping
     public String enterToProgram() {
-        return "workPage";
+        return "mainPage";
     }
 
     @GetMapping("/login")
@@ -74,5 +78,29 @@ public class UserController {
             log.error("Incorrect email or password");
             throw new RuntimeException(e);
         }
+    }
+
+    @GetMapping("/fuelShop/{id}")
+    public String fuelShop(Model model, @PathVariable int id) throws UserNotFoundException {
+        User userById = userService.getUserById(id);
+        model.addAttribute("user", userById);
+        return "workPage";
+    }
+
+    @GetMapping("/cabinet/{id}")
+    public String cabinet(Model model, @PathVariable int id) throws UserNotFoundException {
+        User userById = userService.getUserById(id);
+        model.addAttribute("user", userById);
+        return "cabinet";
+    }
+
+    @GetMapping("/stations")
+    public String getStations(Model model, @RequestParam double latitude, @RequestParam double longitude, @RequestParam double radius) throws UserNotFoundException {
+        User userById = userService.getUserById(1);
+        model.addAttribute("user", userById);
+        System.out.println(latitude + " " + longitude);
+        List<FuellingStation> listFuellingStationsInRadius = fuellingStationService.getListFuellingStationsInRadius(latitude, longitude, radius);
+        listFuellingStationsInRadius.forEach(System.out::println);
+        return "workPage";
     }
 }

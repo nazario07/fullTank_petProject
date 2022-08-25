@@ -6,25 +6,93 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" th:href="@{/style/workPage.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b0166f9752.js" crossorigin="anonymous"></script>
     <title>Work Page</title>
 </head>
 <body>
-<header>
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="workPage.html" th:href="@{http://localhost:8080/fuelShop/{id} (id=${user.id})}"
+                       class="nav-link px-2 text-white">Home</a></li>
+
+                <!--                <%-->
+                <!--                Object role = session.getAttribute("role");-->
+                <!--                if (role != null) {-->
+                <!--                if (session.getAttribute("role").toString().equals("ADMIN")) {-->
+                <!--                out.print("<li><a href=\"createProduct.jsp\" class=\"nav-link px-2 text-white\">Create Product</a></li>");-->
+                <!--                }-->
+                <!--                }-->
+                <!--                %>-->
+
+                <li><a href="https://www.google.com.ua/maps/" class="nav-link px-2 text-white">Google Maps</a></li>
+                <li><a href="cabinet.html" th:href="@{http://localhost:8080/cabinet/{id} (id=${user.id})}"
+                       class="nav-link px-2 text-white">Cabinet</a></li>
+            </ul>
+
+
+            <div class="text-end">
+                <span hidden id="login">
+                    <a href="login.html">
+                        <button type="button" class="btn btn-outline-light me-2">Login</button>
+                    </a>
+
+                    <a href="registration.html">
+                        <button type="button" class="btn btn-warning">Registration</button>
+                    </a>
+                </span>
+
+                <a href="logout" hidden id="logout">
+                    <button type="button" onclick="localStorage.clear()" class="btn btn-warning">Logout</button>
+                </a>
+
+            </div>
+        </div>
+    </div>
 </header>
-<h1>Hello <span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span> </h1>
-<h2>Your personal info:</h2>
-<div class="user_block">
-    <ul>
-        <li>Your id: <span th:text="${user.id}"></span> </li>
-        <li>Your email: <span th:text="${user.email}"></span> </li>
-        <li>Your password: <span th:text="${user.password}"></span> </li>
-        <li>Your age: <span th:text="${user.age}"></span> </li>
-    </ul>
+<div>
+    <p>Click the button to get your coordinates</p>
+
+    <button onclick="getLocation()">Geolocation</button>
+
+    <!--    <label for="use_radius"><b> Find by radius</b></label>-->
+    <!--    <input type="checkbox" name="use_radius" id="use_radius">-->
+    <!--    -->
+    <!--    <label for="radius"><b>Radius</b></label>-->
+    <!--    <input type="number" placeholder="Enter Radius" name="radius" id="radius">-->
+
 </div>
 
+<script>
 
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
 
+    function showPosition(position) {
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
+
+        const Http = new XMLHttpRequest();
+        const url = 'http://localhost:8080/stations?latitude=' + latitude + '&longitude=' + longitude;
+        Http.open("GET", url);
+        Http.send();
+    }
+</script>
+
+SELECT id, ( 3959 * acos( cos( radians(37) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(-122) ) + sin(
+radians(37) ) * sin( radians( lat ) ) ) ) AS distance FROM markers HAVING distance < 25 ORDER BY distance LIMIT 0 , 20;
 
 </body>
 </html>
