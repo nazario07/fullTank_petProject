@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Data
@@ -30,5 +31,24 @@ public class Product {
     @ManyToMany(mappedBy = "productSet")
     private Set<Pump> pumpSet;
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "nameOfFuel=" + nameOfFuel +
+                ", pricePerLiterInHrn=" + pricePerLiterInHrn +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id && Double.compare(product.availableAmountOfFuel, availableAmountOfFuel) == 0 && Double.compare(product.pricePerLiterInHrn, pricePerLiterInHrn) == 0 && nameOfFuel == product.nameOfFuel && Objects.equals(fuellingStation, product.fuellingStation) && Objects.equals(pumpSet, product.pumpSet);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nameOfFuel, availableAmountOfFuel, pricePerLiterInHrn);
+    }
 }

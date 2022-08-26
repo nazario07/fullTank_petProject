@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Data
@@ -34,5 +35,26 @@ public class Pump {
     public Pump(String pumpName, FuellingStation fuellingStation) {
         this.pumpName = pumpName;
         this.fuellingStation = fuellingStation;
+    }
+
+    @Override
+    public String toString() {
+        return "Pump{" +
+                "pumpName='" + pumpName + '\'' +
+                ", productSet=" + productSet +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pump pump = (Pump) o;
+        return id == pump.id && available == pump.available && Objects.equals(pumpName, pump.pumpName) && Objects.equals(productSet, pump.productSet) && Objects.equals(fuellingStation, pump.fuellingStation);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, pumpName, available);
     }
 }

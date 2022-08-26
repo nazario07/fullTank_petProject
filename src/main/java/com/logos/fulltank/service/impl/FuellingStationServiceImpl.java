@@ -64,7 +64,7 @@ public class FuellingStationServiceImpl implements FuellingStationService {
     }
 
     @Override
-    public List<FuellingStation> getListFuellingStationsInRadius(double latitude, double longitude, double radius) {
+    public List<FuellingStation> getListFuellingStationsInRadius(double latitude, double longitude, int radius) {
         return fuellingStationDao.findClosestFuellingStationInRadius(latitude,longitude,radius);
 
 

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Found fuelling Stations In Radius</title>
+</head>
+<body>
+<div class="fuelling_station_block" th:each="fuellingStation:${listFuellingStationsInRadius}">
+    <h2>Fuelling station info <span th:text="${fuellingStation.id}"></span></h2>
+    <ul>
+        <li>Brand <a th:href="@{/fuellingStation/{id} (id=${fuellingStation.id})}"><span
+                th:text="${fuellingStation.providerOrBrand}"></span></a></li>
+        <li>Address: <span th:text="${fuellingStation.address}"></span></li>
+        <li>Number of Pumps: <span th:text="${fuellingStation.numberOfPumps}"></span></li>
+        <li>Longitude and latitude: <span th:text="${fuellingStation.longitude}"></span>;<span th:text="${fuellingStation.latitude}"></span> </li>
+    </ul>
+</div>
+
+</body>
+</html>

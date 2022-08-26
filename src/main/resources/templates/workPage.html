@@ -62,11 +62,8 @@
 
     <button onclick="getLocation()">Geolocation</button>
 
-    <!--    <label for="use_radius"><b> Find by radius</b></label>-->
-    <!--    <input type="checkbox" name="use_radius" id="use_radius">-->
-    <!--    -->
-    <!--    <label for="radius"><b>Radius</b></label>-->
-    <!--    <input type="number" placeholder="Enter Radius" name="radius" id="radius">-->
+    <label for="radius"><b>If you need, enter radius</b></label>
+    <input type="number" placeholder="Enter Radius" name="radius" id="radius" value="0" required>
 
 </div>
 
@@ -83,16 +80,16 @@
     function showPosition(position) {
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
+        let radius = document.getElementById("radius").value;
 
         const Http = new XMLHttpRequest();
-        const url = 'http://localhost:8080/stations?latitude=' + latitude + '&longitude=' + longitude;
+        const url = 'http://localhost:8080/fuellingStation/stations?latitude=' + latitude + '&longitude=' + longitude +
+            '&radius=' + radius;
         Http.open("GET", url);
         Http.send();
     }
 </script>
 
-SELECT id, ( 3959 * acos( cos( radians(37) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(-122) ) + sin(
-radians(37) ) * sin( radians( lat ) ) ) ) AS distance FROM markers HAVING distance < 25 ORDER BY distance LIMIT 0 , 20;
 
 </body>
 </html>

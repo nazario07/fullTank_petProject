@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -53,7 +54,8 @@ public class UserController {
                              @RequestParam String lastName,
                              @RequestParam String email,
                              @RequestParam int age,
-                             @RequestParam String password) throws UserNotFoundException, UserAlreadyExistException, SQLException {
+                             @RequestParam String password) throws UserNotFoundException, UserAlreadyExistException,
+            SQLException {
         User user = new User();
         user.setFirstName(firstName);
         user.setLastName(lastName);
@@ -94,13 +96,5 @@ public class UserController {
         return "cabinet";
     }
 
-    @GetMapping("/stations")
-    public String getStations(Model model, @RequestParam double latitude, @RequestParam double longitude, @RequestParam double radius) throws UserNotFoundException {
-        User userById = userService.getUserById(1);
-        model.addAttribute("user", userById);
-        System.out.println(latitude + " " + longitude);
-        List<FuellingStation> listFuellingStationsInRadius = fuellingStationService.getListFuellingStationsInRadius(latitude, longitude, radius);
-        listFuellingStationsInRadius.forEach(System.out::println);
-        return "workPage";
-    }
+
 }

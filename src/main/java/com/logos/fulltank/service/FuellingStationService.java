@@ -12,6 +12,6 @@ public interface FuellingStationService {
     void deleteFuellingStation(int id) throws FuellingStationNotFoundException;
 
     FuellingStation getClosestStation(double latitude, double longitude);
-    List<FuellingStation> getListFuellingStationsInRadius(double latitude, double longitude, double radius);
+    List<FuellingStation> getListFuellingStationsInRadius(double latitude, double longitude, int radius);
 
 }

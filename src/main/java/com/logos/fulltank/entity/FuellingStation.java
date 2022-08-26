@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Data
@@ -45,5 +46,31 @@ public class FuellingStation {
         this.latitude = latitude;
         this.longitude = longitude;
         this.address = address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FuellingStation that = (FuellingStation) o;
+        return id == that.id && numberOfPumps == that.numberOfPumps && Double.compare(that.latitude, latitude) == 0 && Double.compare(that.longitude, longitude) == 0 && available == that.available && Objects.equals(providerOrBrand, that.providerOrBrand) && Objects.equals(address, that.address) && Objects.equals(products, that.products) && Objects.equals(pumpSet, that.pumpSet);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, providerOrBrand, numberOfPumps, latitude, longitude, address, available);
+    }
+
+    @Override
+    public String toString() {
+        return "FuellingStation{" +
+                "id=" + id +
+                ", providerOrBrand='" + providerOrBrand + '\'' +
+                ", numberOfPumps=" + numberOfPumps +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", address='" + address + '\'' +
+                ", pumpSet=" + pumpSet +
+                '}';
     }
 }
