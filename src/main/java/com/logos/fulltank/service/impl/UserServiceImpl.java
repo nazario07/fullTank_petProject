@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User createUser(User user) throws UserAlreadyExistException, UserNotFoundException, SQLException {
+    public User createUser(User user) throws UserAlreadyExistException {
         if (checkIfExist(user.getEmail())) {
             log.info("Created new user" + user.toString());
             return userDao.save(user);
@@ -46,27 +46,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean checkIfExist(String email) throws SQLException{
+    public boolean checkIfExist(String email){
         Optional<User> byId = userDao.findUserByEmail(email);
         return byId.isEmpty();
     }
 
     @Override
     public User login(String email, String password) throws IncorrectCredsExceptions {
-        try {
-            Optional<User> byEmail = userDao.findUserByEmail(email);
-            if (byEmail.isPresent()) {
-                User user = byEmail.get();
-                if (user.getPassword().equals(password)) {
-                    log.info("User " + user.getEmail() + " entered");
-                    return user;
-                }
+        Optional<User> byEmail = userDao.findUserByEmail(email);
+        if (byEmail.isPresent()) {
+            User user = byEmail.get();
+            if (user.getPassword().equals(password)) {
+                log.info("User " + user.getEmail() + " entered");
+                return user;
             }
-
-        } catch (SQLException e) {
-            log.error("Incorrect email or password");
-            throw new RuntimeException(e);
         }
+
         throw new IncorrectCredsExceptions();
     }
 

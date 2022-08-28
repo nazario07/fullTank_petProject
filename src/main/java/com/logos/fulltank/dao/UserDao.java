@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface UserDao extends JpaRepository<User, Integer> {
-    Optional<User> findUserByEmail(String email) throws SQLException;
+    Optional<User> findUserByEmail(String email);
 }

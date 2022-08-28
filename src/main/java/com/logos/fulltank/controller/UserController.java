@@ -1,6 +1,5 @@
 package com.logos.fulltank.controller;
 
-import com.logos.fulltank.entity.FuellingStation;
 import com.logos.fulltank.entity.User;
 import com.logos.fulltank.exception.IncorrectCredsExceptions;
 import com.logos.fulltank.exception.UserAlreadyExistException;
