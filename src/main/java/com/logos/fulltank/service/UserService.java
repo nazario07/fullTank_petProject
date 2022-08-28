@@ -12,6 +12,8 @@ public interface UserService {
 
     User getUserById(int id) throws UserNotFoundException;
 
+    User getUserByEmail(String email);
+
     boolean checkIfExist(String email) throws SQLException;
 
     User login(String email, String password) throws IncorrectCredsExceptions;

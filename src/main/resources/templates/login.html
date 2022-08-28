@@ -10,19 +10,19 @@
 </head>
 <body>
 
-<form action="/login" method="post">
+<form th:action="@{/login}" method="post">
     <div class="imgcontainer">
         <img th:src="@{/img/img_avatar2.png}" alt="Avatar" class="avatar"/>
     </div>
 
     <div class="container">
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+        <input type="text" placeholder="Enter Email" name="username" id="email" required>
 
         <label for="password"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
-        <button type="submit">Login</button>
+        <input type="submit" value="Sign In"/>
         <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>

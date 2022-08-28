@@ -7,6 +7,10 @@ import com.logos.fulltank.exception.UserAlreadyExistException;
 import com.logos.fulltank.exception.UserNotFoundException;
 import com.logos.fulltank.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
@@ -43,6 +47,11 @@ public class UserServiceImpl implements UserService {
             log.error("User with id " + id + " is not exist");
             throw new UserNotFoundException("User with id " + id + " is not exist");
         }
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return userDao.findUserByEmail(email).get();
     }
 
     @Override

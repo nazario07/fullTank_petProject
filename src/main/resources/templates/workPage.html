@@ -20,12 +20,13 @@
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="workPage.html" th:href="@{http://localhost:8080/workPage/{id} (id=${user.id})}"
+                <li><a href="workPage.html" th:href="@{http://localhost:8080/workPage}"
                        class="nav-link px-2 text-white">Home</a></li>
                 <li th:if="${user.role=='ADMIN'}">
-                    <a href="registrationFS.html" th:href="@{http://localhost:8080/fuellingStation/registration}" class="nav-link px-2 text-white">Create Fuelling Station</a></li>
+                    <a href="registrationFS.html" th:href="@{http://localhost:8080/fuellingStation/registration}"
+                       class="nav-link px-2 text-white">Create Fuelling Station</a></li>
                 <li><a href="https://www.google.com.ua/maps/" class="nav-link px-2 text-white">Google Maps</a></li>
-                <li><a href="cabinet.html" th:href="@{http://localhost:8080/cabinet/{id} (id=${user.id})}"
+                <li><a href="cabinet.html" th:href="@{http://localhost:8080/cabinet}"
                        class="nav-link px-2 text-white">Cabinet</a></li>
             </ul>
 
@@ -41,7 +42,7 @@
                     </a>
                 </span>
 
-                <a href="logout" hidden id="logout">
+                <a th:href="@{http://localhost:8080/logout}" id="logout">
                     <button type="button" onclick="localStorage.clear()" class="btn btn-warning">Logout</button>
                 </a>
 
@@ -52,7 +53,9 @@
 <div>
     <p>Click the button to get your coordinates</p>
 
-    <button onclick="getLocation()">Geolocation</button>
+    <!--    <a href="foundFuellingStationPage.html" th:href="@{http://localhost:8080/fuellingStation/stations}">-->
+    <button onclick="getLocation()" class="btn btn-warning">Geolocation</button>
+    <!--    </a>-->
 
     <label for="radius"><b>If you need, enter radius</b></label>
     <input type="number" placeholder="Enter Radius" name="radius" id="radius" value="0" required>
@@ -74,12 +77,10 @@
         let longitude = position.coords.longitude;
         let radius = document.getElementById("radius").value;
 
-        const Http = new XMLHttpRequest();
         const url = 'http://localhost:8080/fuellingStation/stations?latitude=' + latitude + '&longitude=' + longitude +
             '&radius=' + radius;
-        Http.open("GET", url);
-        Http.send(null);
-
+        window.open(url,"_self");
+        // fetch(url, {method: 'GET'});
 
     }
 </script>
