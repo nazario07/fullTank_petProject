@@ -1,0 +1,16 @@
+2022-08-28 11:04:24,829 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 9812 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-28 11:04:24,839 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-28 11:04:31,268 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-28 11:04:31,268 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-28 11:04:34,119 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-28 11:04:35,460 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-28 11:04:35,991 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-28 11:04:36,632 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-28 11:04:37,194 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-28 11:04:38,366 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-28 11:04:38,429 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-28 11:04:40,413 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-28 11:04:42,585 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 20.011 seconds (JVM running for 25.746)
+2022-08-28 11:05:03,425 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-28 11:05:08,798 INFO User Service [http-nio-8080-exec-4] User nazartsykhuliak@gmail.com entered
+2022-08-28 11:05:35,340 INFO User Service [http-nio-8080-exec-6] Information about user with id 1 ready for you
