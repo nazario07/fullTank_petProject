@@ -13,8 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 @Controller
@@ -82,7 +81,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/fuelShop/{id}")
+    @GetMapping("/workPage/{id}")
     public String fuelShop(Model model, @PathVariable int id) throws UserNotFoundException {
         User userById = userService.getUserById(id);
         model.addAttribute("user", userById);

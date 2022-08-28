@@ -20,18 +20,10 @@
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="workPage.html" th:href="@{http://localhost:8080/fuelShop/{id} (id=${user.id})}"
+                <li><a href="workPage.html" th:href="@{http://localhost:8080/workPage/{id} (id=${user.id})}"
                        class="nav-link px-2 text-white">Home</a></li>
-
-                <!--                <%-->
-                <!--                Object role = session.getAttribute("role");-->
-                <!--                if (role != null) {-->
-                <!--                if (session.getAttribute("role").toString().equals("ADMIN")) {-->
-                <!--                out.print("<li><a href=\"createProduct.jsp\" class=\"nav-link px-2 text-white\">Create Product</a></li>");-->
-                <!--                }-->
-                <!--                }-->
-                <!--                %>-->
-
+                <li th:if="${user.role=='ADMIN'}">
+                    <a href="registrationFS.html" th:href="@{http://localhost:8080/fuellingStation/registration}" class="nav-link px-2 text-white">Create Fuelling Station</a></li>
                 <li><a href="https://www.google.com.ua/maps/" class="nav-link px-2 text-white">Google Maps</a></li>
                 <li><a href="cabinet.html" th:href="@{http://localhost:8080/cabinet/{id} (id=${user.id})}"
                        class="nav-link px-2 text-white">Cabinet</a></li>
@@ -86,7 +78,8 @@
         const url = 'http://localhost:8080/fuellingStation/stations?latitude=' + latitude + '&longitude=' + longitude +
             '&radius=' + radius;
         Http.open("GET", url);
-        Http.send();
+        Http.send(null);
+
     }
 </script>
 

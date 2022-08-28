@@ -8,7 +8,7 @@
     <title>Found fuelling Stations In Radius</title>
 </head>
 <body>
-<div class="fuelling_station_block" th:each="fuellingStation:${listFuellingStationsInRadius}">
+<div class="fuelling_station_block" th:each="fuellingStation:${listFuellingStations}">
     <h2>Fuelling station info <span th:text="${fuellingStation.id}"></span></h2>
     <ul>
         <li>Brand <a th:href="@{/fuellingStation/{id} (id=${fuellingStation.id})}"><span

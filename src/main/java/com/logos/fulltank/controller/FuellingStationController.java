@@ -15,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,14 +84,9 @@ public class FuellingStationController {
             List<FuellingStation> listFuellingStationsInRadius = fuellingStationService.getListFuellingStationsInRadius
                     (latitude, longitude, radius);
             listFuellingStations.addAll(listFuellingStationsInRadius);
-            listFuellingStations.forEach(System.out::println);
         }
+        listFuellingStations.forEach(System.out::println);
         model.addAttribute("listFuellingStations", listFuellingStations);
         return "foundFuellingStationPage";
-
-
     }
-
-
-
 }
