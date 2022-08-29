@@ -68,6 +68,8 @@ public class FuellingStationController {
     public String getById(Model model, @PathVariable int id) throws FuellingStationNotFoundException {
         FuellingStation byId = fuellingStationService.getById(id);
         model.addAttribute("fuellingStation", byId);
+
+
         return "fuellingStation";
     }
     @GetMapping("/stations")

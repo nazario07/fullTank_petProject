@@ -30,24 +30,12 @@
                        class="nav-link px-2 text-white">Cabinet</a></li>
             </ul>
 
+            <a th:href="@{http://localhost:8080/logout}" id="logout">
+                <button type="button" onclick="localStorage.clear()" class="btn btn-warning">Logout</button>
+            </a>
 
-            <div class="text-end">
-                <span hidden id="login">
-                    <a href="login.html">
-                        <button type="button" class="btn btn-outline-light me-2">Login</button>
-                    </a>
-
-                    <a href="registration.html">
-                        <button type="button" class="btn btn-warning">Registration</button>
-                    </a>
-                </span>
-
-                <a th:href="@{http://localhost:8080/logout}" id="logout">
-                    <button type="button" onclick="localStorage.clear()" class="btn btn-warning">Logout</button>
-                </a>
-
-            </div>
         </div>
+    </div>
     </div>
 </header>
 <div>
@@ -79,7 +67,7 @@
 
         const url = 'http://localhost:8080/fuellingStation/stations?latitude=' + latitude + '&longitude=' + longitude +
             '&radius=' + radius;
-        window.open(url,"_self");
+        window.open(url, "_self");
         // fetch(url, {method: 'GET'});
 
     }
