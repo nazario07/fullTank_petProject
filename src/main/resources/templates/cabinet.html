@@ -45,6 +45,20 @@
         <li>Your age: <span th:text="${user.age}"></span> </li>
     </ul>
 </div>
+Purchase history
+<div class="receipts_block" th:each="receipt:${receipts}">
+    <h2>Receipt#<span th:text="${receipt.id}"></span></h2>
+    <ul>
+        <li><b>Date:</b> <span th:text="${receipt.date}"></span></li>
+        <li><b>Product:</b> <span th:text="${receipt.productName}"></span></li>
+        <li><b>Pump:</b> <span th:text="${receipt.pump}"></span></li>
+        <li><b>Amount:</b> <span th:text="${receipt.amount}"></span></li>
+        <li><b>Price:</b> <span th:text="${receipt.price}"></span></li>
+        <li><b>Total: <span th:text="${receipt.total}"></span></b></li>
+    </ul>
+</div>
+
+
 
 
 

@@ -17,6 +17,8 @@ public class Receipt {
     private int id;
     @Column(name = "date")
     private Date date;
+    @Column(name = "pump")
+    private String pump;
     @Column(name = "name_of_product")
     private FuelName productName;
     @Column(name = "price")
@@ -31,8 +33,9 @@ public class Receipt {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Receipt(Date date, FuelName productName, double price, double amount, double total, User user) {
+    public Receipt(Date date, String pump, FuelName productName, double price, double amount, double total, User user) {
         this.date = date;
+        this.pump = pump;
         this.productName = productName;
         this.price = price;
         this.amount = amount;

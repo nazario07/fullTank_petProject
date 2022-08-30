@@ -3,6 +3,7 @@ package com.logos.fulltank.controller;
 import com.logos.fulltank.entity.*;
 import com.logos.fulltank.exception.FuellingStationNotFoundException;
 import com.logos.fulltank.exception.ProductNotFoundException;
+import com.logos.fulltank.exception.PumpNotFoundException;
 import com.logos.fulltank.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
@@ -77,13 +78,15 @@ public class FuellingStationController {
     }
 
     @GetMapping("/buy")
-    public String buyFuel(Model model, @RequestParam double amount, @RequestParam int productId, @RequestParam int fuellingStationId,
-                          Authentication authentication) throws FuellingStationNotFoundException, ProductNotFoundException {
+    public String buyFuel(Model model, @RequestParam double amount, @RequestParam int productId,
+                          @RequestParam int fuellingStationId, @RequestParam int pumpId,
+                          Authentication authentication) throws FuellingStationNotFoundException, ProductNotFoundException, PumpNotFoundException {
         User user = userService.getUserByEmail(authentication.getName());
         model.addAttribute("user", user);
         FuellingStation fuellingStation = fuellingStationService.getById(fuellingStationId);
         model.addAttribute("fuellingStation", fuellingStation);
         Receipt receipt = receiptService.createReceipt(new Receipt(new Date(System.currentTimeMillis()),
+                pumpService.getById(pumpId).getPumpName(),
                 productService.getById(productId).getNameOfFuel(),
                 productService.getById(productId).getPricePerLiterInHrn(),
                 amount,

@@ -29,7 +29,7 @@
                 <li>Real amount: <span th:text="${product.availableAmountOfFuel}"></span></li>
 
                 <button th:attr="id=${product.id}+_button+${pump.id}" hidden
-                        th:onclick="'javascript:myFunction(\'' +${product.id}+'\',\''+${fuellingStation.id}+'\');'">
+                        th:onclick="'javascript:myFunction(\'' +${product.id}+'\',\''+${fuellingStation.id}+'\',\''+${pump.id}+'\');'">
                     CHOOSE
                 </button>
 
@@ -48,9 +48,9 @@
         document.getElementById(id).hidden = true;
     }
 
-    function myFunction(product_id, fuellingStation_id) {
+    function myFunction(product_id, fuellingStation_id, pump_id) {
         let amount = prompt("Please enter amount of fuel", "10");
-        const url = 'http://localhost:8080/fuellingStation/buy?amount=' + amount + '&productId=' + product_id + '&fuellingStationId=' + fuellingStation_id;
+        const url = 'http://localhost:8080/fuellingStation/buy?amount=' + amount + '&productId=' + product_id + '&fuellingStationId=' + fuellingStation_id + '&pumpId=' + pump_id;
         window.open(url, "_self");
     }
 </script>
