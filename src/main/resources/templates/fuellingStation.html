@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/style/FuellingStation.css}">
     <title>Fuelling station</title>
 </head>
 <body>
@@ -14,9 +15,35 @@
         <li>Brand <span th:text="${fuellingStation.providerOrBrand}"></span></li>
         <li>Address: <span th:text="${fuellingStation.address}"></span></li>
         <li>Number of Pumps: <span th:text="${fuellingStation.numberOfPumps}"></span></li>
-        <li>Longitude and latitude: <span th:text="${fuellingStation.longitude}"></span>;<span th:text="${fuellingStation.latitude}"></span> </li>
+        <li>Latitude AND Longitude: <span th:text="${fuellingStation.latitude}"></span>;<span
+                th:text="${fuellingStation.longitude}"></span></li>
     </ul>
-</div>
+    <p>Fuelling pumps:</p>
+    <div class="pump_block" th:each="pump:${fuellingStation.pumpSet}"><span th:text="${pump.pumpName}"></span>
+        <div th:each="product:${fuellingStation.products}">
+            <ul>
+                <li>Fuel: <span th:text="${product.nameOfFuel}"></span>
+                    <span hidden id="id" th:text="${product.id}"></span>
+                </li>
+<!--                //перевірити-->
+                <li>Price: <span id="price" th:text=" ${product.pricePerLiterInHrn}"></span></li>
+                <li>Real amount: <span th:text="${product.availableAmountOfFuel}"></span></li>
+                <p>
+                    <button onclick="myFunction()">BUY</button>
+            </ul>
 
+            <hr>
+        </div>
+    </div>
+</div>
+<script>
+    function myFunction() {
+        let id = document.getElementById("id");
+        let amount = prompt("Please enter amount of fuel", "10");
+        const url = 'http://localhost:8080/fuellingStation/id/buy?amount=' + amount & +'&productId=' + id;
+        window.open(url, "_self");
+    }
+
+</script>
 </body>
 </html>

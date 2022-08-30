@@ -1,9 +1,7 @@
 package com.logos.fulltank.service.impl;
 
 import com.logos.fulltank.dao.PumpDao;
-import com.logos.fulltank.entity.Product;
 import com.logos.fulltank.entity.Pump;
-import com.logos.fulltank.exception.ProductNotFoundException;
 import com.logos.fulltank.exception.PumpNotFoundException;
 import com.logos.fulltank.service.PumpService;
 import lombok.extern.slf4j.Slf4j;

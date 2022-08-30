@@ -1,22 +1,16 @@
 package com.logos.fulltank.controller;
 
-import com.logos.fulltank.entity.FuellingStation;
-import com.logos.fulltank.entity.Pump;
-import com.logos.fulltank.entity.User;
+import com.logos.fulltank.entity.*;
 import com.logos.fulltank.exception.FuellingStationNotFoundException;
-import com.logos.fulltank.exception.UserAlreadyExistException;
-import com.logos.fulltank.exception.UserNotFoundException;
-import com.logos.fulltank.service.FuellingStationService;
-import com.logos.fulltank.service.ProductService;
-import com.logos.fulltank.service.PumpService;
-import com.logos.fulltank.service.UserService;
+import com.logos.fulltank.exception.ProductNotFoundException;
+import com.logos.fulltank.service.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/fuellingStation")
@@ -26,15 +20,19 @@ public class FuellingStationController {
     private final FuellingStationService fuellingStationService;
     private final PumpService pumpService;
     private final UserService userService;
+    private final ReceiptService receiptService;
     private final ProductService productService;
+
 
     public FuellingStationController(FuellingStationService fuellingStationService,
                                      PumpService pumpService,
                                      UserService userService,
+                                     ReceiptService receiptService,
                                      ProductService productService) {
         this.fuellingStationService = fuellingStationService;
         this.pumpService = pumpService;
         this.userService = userService;
+        this.receiptService = receiptService;
         this.productService = productService;
     }
 
@@ -57,10 +55,6 @@ public class FuellingStationController {
                         Double.parseDouble(longitude),
                         address));
         model.addAttribute("fuellingStation", newFuellingStation);
-        for (int i = 1; i <= numberOfPumps; i++) {
-            String pumpName = "Pump#" + i;
-            pumpService.createPump(new Pump(pumpName, newFuellingStation));
-        }
         return "registrationPumpsAndProducts";
     }
 
@@ -68,27 +62,33 @@ public class FuellingStationController {
     public String getById(Model model, @PathVariable int id) throws FuellingStationNotFoundException {
         FuellingStation byId = fuellingStationService.getById(id);
         model.addAttribute("fuellingStation", byId);
-
-
         return "fuellingStation";
     }
+
     @GetMapping("/stations")
     public String getStations(Model model, @RequestParam double latitude, @RequestParam double longitude,
-                              @RequestParam int radius) throws UserNotFoundException {
-        User userById = userService.getUserById(1);
-        model.addAttribute("user", userById);
-        System.out.println(latitude + " " + longitude);
-        List<FuellingStation> listFuellingStations = new ArrayList<>();
-        if (radius == 0) {
-            FuellingStation closestStation = fuellingStationService.getClosestStation(latitude, longitude);
-            listFuellingStations.add(closestStation);
-        } else {
-            List<FuellingStation> listFuellingStationsInRadius = fuellingStationService.getListFuellingStationsInRadius
-                    (latitude, longitude, radius);
-            listFuellingStations.addAll(listFuellingStationsInRadius);
-        }
+                              @RequestParam int radius, Authentication authentication) {
+        User user = userService.getUserByEmail(authentication.getName());
+        model.addAttribute("user", user);
+        List<FuellingStation> listFuellingStations = fuellingStationService.getListFuellingStations(latitude, longitude, radius);
         listFuellingStations.forEach(System.out::println);
         model.addAttribute("listFuellingStations", listFuellingStations);
         return "foundFuellingStationPage";
+    }
+
+    @GetMapping("/{id}/buy")
+    public String buyFuel(Model model, @RequestParam double amount, @RequestParam int productId, @PathVariable int id, Authentication authentication) throws FuellingStationNotFoundException, ProductNotFoundException {
+        User user = userService.getUserByEmail(authentication.getName());
+        model.addAttribute("user", user);
+        FuellingStation fuellingStation = fuellingStationService.getById(id);
+        model.addAttribute("fuellingStation", fuellingStation);
+        receiptService.createReceipt(new Receipt(new Date(System.currentTimeMillis()),
+                productService.getById(productId).getNameOfFuel(),
+                productService.getById(productId).getPricePerLiterInHrn(),
+                amount,
+                productService.getById(productId).getPricePerLiterInHrn() * amount,
+                user
+        ));
+        return "receipt";
     }
 }

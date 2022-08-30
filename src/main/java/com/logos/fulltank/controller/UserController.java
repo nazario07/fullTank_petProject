@@ -4,17 +4,17 @@ import com.logos.fulltank.entity.User;
 import com.logos.fulltank.exception.IncorrectCredsExceptions;
 import com.logos.fulltank.exception.UserAlreadyExistException;
 import com.logos.fulltank.exception.UserNotFoundException;
-import com.logos.fulltank.service.FuellingStationService;
 import com.logos.fulltank.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.SQLException;
 
@@ -26,15 +26,13 @@ public class UserController {
 
     private final UserService userService;
 
-    @Autowired
-    public PasswordEncoder passwordEncoder;
-
-    private final FuellingStationService fuellingStationService;
+    public final PasswordEncoder passwordEncoder;
 
 
-    public UserController(UserService userService, FuellingStationService fuellingStationService) {
+
+    public UserController(UserService userService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
-        this.fuellingStationService = fuellingStationService;
+        this.passwordEncoder = passwordEncoder;
     }
 
 
@@ -75,21 +73,15 @@ public class UserController {
     @PostMapping("/login")
     public String signIn(Model model,
                          @RequestParam String email,
-                         @RequestParam String password) {
-        User user = null;
-        try {
-            user = userService.login(email, password);
-            model.addAttribute("user", user);
-            return "workPage";
-        } catch (IncorrectCredsExceptions e) {
-            log.error("Incorrect email or password");
-            throw new RuntimeException(e);
-        }
+                         @RequestParam String password) throws IncorrectCredsExceptions {
+        User user = userService.login(email, password);
+        model.addAttribute("user", user);
+        return "workPage";
     }
 
     @PreAuthorize("hasAnyAuthority({'ADMIN','USER'})")
     @GetMapping("/workPage")
-    public String fuelShop(Model model, Authentication authentication) throws UserNotFoundException {
+    public String fuelShop(Model model, Authentication authentication) {
         User user = userService.getUserByEmail(authentication.getName());
         model.addAttribute("user", user);
         return "workPage";
@@ -97,7 +89,7 @@ public class UserController {
 
     @PreAuthorize("hasAnyAuthority({'ADMIN','USER'})")
     @GetMapping("/cabinet")
-    public String cabinet(Model model, Authentication authentication) throws UserNotFoundException {
+    public String cabinet(Model model, Authentication authentication) {
         User user = userService.getUserByEmail(authentication.getName());
         model.addAttribute("user", user);
         return "cabinet";

@@ -5,11 +5,9 @@ import com.logos.fulltank.entity.FuellingStation;
 import com.logos.fulltank.exception.FuellingStationNotFoundException;
 import com.logos.fulltank.service.FuellingStationService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.Store;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,14 +55,26 @@ public class FuellingStationServiceImpl implements FuellingStationService {
         }
     }
 
-    @Override
-    public FuellingStation getClosestStation(double latitude, double longitude) {
-        return fuellingStationDao.findClosestStation(latitude,longitude);
 
+    @Override
+    public List<FuellingStation> getListFuellingStations(double latitude, double longitude, int radius) {
+        List<FuellingStation> listFuellingStations = new ArrayList<>();
+        if (radius == 0) {
+            FuellingStation closestStation = getClosestStation(latitude, longitude);
+            listFuellingStations.add(closestStation);
+        } else {
+            List<FuellingStation> listFuellingStationsInRadius = getListFuellingStationsInRadius
+                    (latitude, longitude, radius);
+            listFuellingStations.addAll(listFuellingStationsInRadius);
+        }
+        return listFuellingStations;
     }
 
-    @Override
-    public List<FuellingStation> getListFuellingStationsInRadius(double latitude, double longitude, int radius) {
+    private FuellingStation getClosestStation(double latitude, double longitude) {
+        return fuellingStationDao.findClosestStation(latitude,longitude);
+    }
+
+    private List<FuellingStation> getListFuellingStationsInRadius(double latitude, double longitude, int radius) {
         return fuellingStationDao.findClosestFuellingStationInRadius(latitude,longitude,radius);
 
 

@@ -11,6 +11,7 @@
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
             crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b0166f9752.js" crossorigin="anonymous"></script>
+
     <title>Found fuelling Stations In Radius</title>
 </head>
 <header class="p-3 bg-dark text-white">
@@ -41,7 +42,7 @@
                 th:text="${fuellingStation.providerOrBrand}"></span></a></li>
         <li>Address: <span th:text="${fuellingStation.address}"></span></li>
         <li>Number of Pumps: <span th:text="${fuellingStation.numberOfPumps}"></span></li>
-        <li>Longitude and latitude: <span th:text="${fuellingStation.longitude}"></span>;<span th:text="${fuellingStation.latitude}"></span> </li>
+        <li>Latitude AND Longitude: <span th:text="${fuellingStation.latitude}"></span>;<span th:text="${fuellingStation.longitude}"></span> </li>
     </ul>
 </div>
 
