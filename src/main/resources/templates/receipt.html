@@ -5,20 +5,50 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b0166f9752.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" th:href="@{/style/receipt.css}">
     <title>Receipt</title>
 </head>
 <body>
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="workPage.html" th:href="@{http://localhost:8080/workPage}"
+                       class="nav-link px-2 text-white">Home</a></li>
+                <li><a href="https://www.google.com.ua/maps/" class="nav-link px-2 text-white">Google Maps</a></li>
+                <li><a href="cabinet.html" th:href="@{http://localhost:8080/cabinet}"
+                       class="nav-link px-2 text-white">Cabinet</a></li>
+            </ul>
+
+            <a th:href="@{http://localhost:8080/logout}" id="logout">
+                <button type="button" onclick="localStorage.clear()" class="btn btn-warning">Logout</button>
+            </a>
+
+        </div>
+    </div>
+    </div>
+</header>
+
 <table class="body-wrap">
-    <tbody><tr>
+    <tbody>
+    <tr>
         <td></td>
         <td class="container" width="600">
             <div class="content">
                 <table class="main" width="100%" cellpadding="0" cellspacing="0">
-                    <tbody><tr>
+                    <tbody>
+                    <tr>
                         <td class="content-wrap aligncenter">
                             <table width="100%" cellpadding="0" cellspacing="0">
-                                <tbody><tr>
+                                <tbody>
+                                <tr>
                                     <td class="content-block">
                                         <h2>Thanks for using our app</h2>
                                     </td>
@@ -26,7 +56,8 @@
                                 <tr>
                                     <td class="content-block">
                                         <table class="invoice">
-                                            <tbody><tr>
+                                            <tbody>
+                                            <tr>
                                                 <td><span th:text="${user.firstName}"></span>
                                                     <span th:text="${user.lastName}"></span>
                                                     <br>
@@ -38,27 +69,29 @@
                                             <tr>
                                                 <td>
                                                     <table class="invoice-items" cellpadding="0" cellspacing="0">
-                                                            <td>
-                                                                <span th:text="${receipt.productName}"></span>
-                                                            </td>
-                                                            <td class="aligncenter">
-                                                                <span th:text="${amount}"></span>
-                                                            </td>
+                                                        <td>
+                                                            <span th:text="${receipt.productName}"></span>
+                                                        </td>
+                                                        <td class="alignright">
+                                                            <span th:text="${amount}"></span>
+                                                        </td>
 
-                                                            <td class="alignright">
-                                                                <span th:text="${product.pricePerLiterInHrn}"></span>
-                                                            </td>
+                                                        <td class="alignright">
+                                                            <span th:text="${product.pricePerLiterInHrn}"></span>
+                                                        </td>
                                                         </tr>
                                                         <tr class="total">
-                                                            <td class="alignright" width="80%">Total</td>
+                                                            <td class="alignleft" width="80%">Total</td>
                                                             <td class="alignright">
                                                                 <span th:text="${receipt.total}"></span>
                                                             </td>
                                                         </tr>
-                                                        </tbody></table>
+                                                        </tbody>
+                                                    </table>
                                                 </td>
                                             </tr>
-                                            </tbody></table>
+                                            </tbody>
+                                        </table>
                                     </td>
                                 </tr>
                                 <tr>
@@ -68,24 +101,31 @@
                                 </tr>
                                 <tr>
                                     <td class="content-block">
-                                        Full Tank&copy;. Lviv, Ukraine
+                                        Full Tank &copy;. Lviv, Ukraine
                                     </td>
                                 </tr>
-                                </tbody></table>
+                                </tbody>
+                            </table>
                         </td>
                     </tr>
-                    </tbody></table>
+                    </tbody>
+                </table>
                 <div class="footer">
                     <table width="100%">
-                        <tbody><tr>
-                            <td class="aligncenter content-block">Questions? Email <a href="mailto:">nazartsykhuliak@gmail.com</a></td>
+                        <tbody>
+                        <tr>
+                            <td class="aligncenter content-block">Questions? Email <a href="mailto:">nazartsykhuliak@gmail.com</a>
+                            </td>
                         </tr>
-                        </tbody></table>
-                </div></div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </td>
         <td></td>
     </tr>
-    </tbody></table>
+    </tbody>
+</table>
 
 </body>
 </html>

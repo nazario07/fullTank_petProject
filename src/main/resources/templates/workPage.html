@@ -38,13 +38,9 @@
     </div>
     </div>
 </header>
-<div>
-    <p>Click the button to get your coordinates</p>
-
-    <!--    <a href="foundFuellingStationPage.html" th:href="@{http://localhost:8080/fuellingStation/stations}">-->
-    <button onclick="getLocation()" class="btn btn-warning">Geolocation</button>
-    <!--    </a>-->
-
+<div class="main">
+    <p>Click the button to get your coordinates and find the nearest stations</p>
+    <button onclick="getLocation()" class="btn btn-warning">Find Fuelling Station</button>
     <label for="radius"><b>If you need, enter radius</b></label>
     <input type="number" placeholder="Enter Radius" name="radius" id="radius" value="0" required>
 

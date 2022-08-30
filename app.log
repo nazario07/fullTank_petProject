@@ -5069,3 +5069,327 @@ org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property o
 2022-08-30 19:56:00,645 WARN org.apache.catalina.util.SessionIdGeneratorBase [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [407] milliseconds.
 2022-08-30 19:57:22,331 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2022-08-30 19:57:22,405 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-30 19:57:36,664 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 12296 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-30 19:57:36,678 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-30 19:57:42,760 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-30 19:57:42,764 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 19:57:43,179 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-30 19:57:43,897 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-30 19:57:44,022 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-30 19:57:44,449 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-30 19:57:44,695 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-30 19:57:45,458 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-30 19:57:45,500 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-30 19:57:47,485 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-30 19:57:51,217 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 16.12 seconds (JVM running for 19.67)
+2022-08-30 19:58:00,920 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-30 19:58:03,063 WARN org.apache.catalina.util.SessionIdGeneratorBase [http-nio-8080-exec-2] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [1,775] milliseconds.
+2022-08-30 21:38:27,796 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h40m12s227ms656µs).
+2022-08-30 21:41:41,144 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-30 21:41:41,184 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-30 21:42:10,062 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 12896 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-30 21:42:10,088 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-30 21:42:17,288 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-30 21:42:17,296 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 21:42:17,768 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-30 21:42:18,633 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-30 21:42:18,852 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-30 21:42:19,431 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-30 21:42:19,768 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-30 21:42:20,600 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-30 21:42:20,647 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-30 21:42:23,085 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-30 21:42:27,777 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 21.66 seconds (JVM running for 27.952)
+2022-08-30 21:42:30,952 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-30 21:42:38,313 WARN org.apache.catalina.util.SessionIdGeneratorBase [http-nio-8080-exec-4] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [483] milliseconds.
+2022-08-30 21:42:46,210 INFO Fuelling Service [http-nio-8080-exec-5] Information about fuelling station with id 3 ready for you
+2022-08-30 21:49:23,628 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-30 21:49:23,675 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-30 21:49:38,741 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 680 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-30 21:49:38,751 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-30 21:49:43,491 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-30 21:49:43,492 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 21:49:43,816 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-30 21:49:44,722 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-30 21:49:45,174 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-30 21:49:45,499 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-30 21:49:45,788 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-30 21:49:47,605 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-30 21:49:47,648 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-30 21:49:51,326 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-30 21:49:56,580 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 19.449 seconds (JVM running for 23.627)
+2022-08-30 21:50:06,627 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-30 21:50:07,270 WARN org.apache.catalina.util.SessionIdGeneratorBase [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [402] milliseconds.
+2022-08-30 21:51:52,705 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-30 21:51:52,749 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-30 21:52:08,279 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 6900 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-30 21:52:08,290 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-30 21:52:13,751 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-30 21:52:13,753 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 21:52:15,580 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-30 21:52:15,707 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-30 21:52:16,141 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-30 21:52:16,367 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-30 21:52:17,457 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-30 21:52:17,511 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-30 21:52:20,938 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-30 21:52:24,732 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 18.404 seconds (JVM running for 21.787)
+2022-08-30 21:52:25,151 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-30 21:52:25,181 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-30 21:52:43,988 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 12656 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-30 21:52:44,000 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-30 21:52:48,888 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-30 21:52:48,890 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 21:52:49,214 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-30 21:52:49,800 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-30 21:52:49,905 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-30 21:52:50,199 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-30 21:52:50,433 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-30 21:52:51,415 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-30 21:52:51,491 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-30 21:52:53,550 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-30 21:52:57,104 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 14.79 seconds (JVM running for 17.963)
+2022-08-30 21:53:02,733 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-30 21:53:11,796 WARN org.apache.catalina.util.SessionIdGeneratorBase [http-nio-8080-exec-9] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [473] milliseconds.
+2022-08-30 21:53:44,600 INFO Fuelling Service [http-nio-8080-exec-6] Information about fuelling station with id 3 ready for you
+2022-08-30 21:53:51,255 INFO Fuelling Service [http-nio-8080-exec-9] Information about fuelling station with id 3 ready for you
+2022-08-30 21:53:51,273 INFO Pump Service [http-nio-8080-exec-9] Information about pump with id 1 ready for you
+2022-08-30 21:53:51,285 INFO Product Service [http-nio-8080-exec-9] Information about product with id 4 ready for you
+2022-08-30 21:53:51,293 INFO Product Service [http-nio-8080-exec-9] Information about product with id 4 ready for you
+2022-08-30 21:53:51,300 INFO Product Service [http-nio-8080-exec-9] Information about product with id 4 ready for you
+2022-08-30 21:53:51,402 INFO Product Service [http-nio-8080-exec-9] Information about product with id 4 ready for you
+2022-08-30 21:54:21,677 INFO Fuelling Service [http-nio-8080-exec-2] Information about fuelling station with id 3 ready for you
+2022-08-30 21:55:05,619 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-30 21:55:05,669 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-30 21:55:21,158 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 6484 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-30 21:55:21,170 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-30 21:55:25,944 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-30 21:55:25,945 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 21:55:26,323 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-30 21:55:26,941 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-30 21:55:27,041 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-30 21:55:27,366 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-30 21:55:27,618 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-30 21:55:28,375 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-30 21:55:28,419 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-30 21:55:30,347 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-30 21:55:34,166 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 14.55 seconds (JVM running for 18.285)
+2022-08-30 21:55:45,340 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-30 21:55:45,542 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.logos.fulltank.controller.FuellingStationController.getStations(FuellingStationController.java:72)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1070)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilterInternal(AuthorizationFilter.java:73)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-08-30 21:56:44,231 WARN org.apache.catalina.util.SessionIdGeneratorBase [http-nio-8080-exec-9] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [397] milliseconds.
+2022-08-30 21:56:48,649 INFO Fuelling Service [http-nio-8080-exec-4] Information about fuelling station with id 3 ready for you
+2022-08-30 21:56:55,534 INFO Fuelling Service [http-nio-8080-exec-6] Information about fuelling station with id 3 ready for you
+2022-08-30 21:56:55,550 INFO Pump Service [http-nio-8080-exec-6] Information about pump with id 1 ready for you
+2022-08-30 21:56:55,565 INFO Product Service [http-nio-8080-exec-6] Information about product with id 3 ready for you
+2022-08-30 21:56:55,572 INFO Product Service [http-nio-8080-exec-6] Information about product with id 3 ready for you
+2022-08-30 21:56:55,583 INFO Product Service [http-nio-8080-exec-6] Information about product with id 3 ready for you
+2022-08-30 21:56:55,685 INFO Product Service [http-nio-8080-exec-6] Information about product with id 3 ready for you
+2022-08-30 21:58:40,520 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-30 21:58:40,584 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-30 21:58:57,831 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 3540 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-30 21:58:57,843 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-30 21:59:04,573 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-30 21:59:04,575 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 21:59:05,006 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-30 21:59:06,277 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-30 21:59:06,383 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-30 21:59:06,723 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-30 21:59:06,974 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-30 21:59:08,326 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-30 21:59:08,415 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-30 21:59:12,617 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-30 21:59:23,750 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 27.76 seconds (JVM running for 32.48)
+2022-08-30 21:59:29,922 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-30 21:59:36,758 WARN org.apache.catalina.util.SessionIdGeneratorBase [http-nio-8080-exec-9] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [433] milliseconds.
+2022-08-30 21:59:41,162 INFO Fuelling Service [http-nio-8080-exec-3] Information about fuelling station with id 3 ready for you
+2022-08-30 21:59:44,602 INFO Fuelling Service [http-nio-8080-exec-7] Information about fuelling station with id 3 ready for you
+2022-08-30 21:59:44,617 INFO Pump Service [http-nio-8080-exec-7] Information about pump with id 1 ready for you
+2022-08-30 21:59:44,632 INFO Product Service [http-nio-8080-exec-7] Information about product with id 1 ready for you
+2022-08-30 21:59:44,637 INFO Product Service [http-nio-8080-exec-7] Information about product with id 1 ready for you
+2022-08-30 21:59:44,647 INFO Product Service [http-nio-8080-exec-7] Information about product with id 1 ready for you
+2022-08-30 21:59:44,748 INFO Product Service [http-nio-8080-exec-7] Information about product with id 1 ready for you
+2022-08-30 22:00:22,355 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-30 22:00:22,430 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-30 22:00:43,209 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 6456 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-30 22:00:43,219 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-30 22:00:49,362 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-30 22:00:49,364 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 22:00:49,834 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-30 22:00:50,704 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-30 22:00:50,819 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-30 22:00:51,190 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-30 22:00:51,403 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-30 22:00:52,212 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-30 22:00:52,259 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-30 22:00:54,192 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-30 22:00:57,780 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 16.863 seconds (JVM running for 23.939)
+2022-08-30 22:01:06,235 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-30 22:01:15,073 WARN org.apache.catalina.util.SessionIdGeneratorBase [http-nio-8080-exec-7] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [409] milliseconds.
+2022-08-30 22:01:18,545 INFO Fuelling Service [http-nio-8080-exec-3] Information about fuelling station with id 3 ready for you
+2022-08-30 22:01:32,994 INFO Fuelling Service [http-nio-8080-exec-6] Information about fuelling station with id 3 ready for you
+2022-08-30 22:01:33,013 INFO Pump Service [http-nio-8080-exec-6] Information about pump with id 2 ready for you
+2022-08-30 22:01:33,028 INFO Product Service [http-nio-8080-exec-6] Information about product with id 2 ready for you
+2022-08-30 22:01:33,036 INFO Product Service [http-nio-8080-exec-6] Information about product with id 2 ready for you
+2022-08-30 22:01:33,043 INFO Product Service [http-nio-8080-exec-6] Information about product with id 2 ready for you
+2022-08-30 22:01:33,136 INFO Product Service [http-nio-8080-exec-6] Information about product with id 2 ready for you
+2022-08-30 22:02:52,370 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-30 22:02:52,428 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-30 22:03:10,680 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 10480 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-30 22:03:10,693 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-30 22:03:20,446 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-30 22:03:20,448 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 22:03:21,015 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-30 22:03:21,744 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-30 22:03:21,858 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-30 22:03:22,243 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-30 22:03:22,531 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-30 22:03:23,510 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-30 22:03:23,577 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-30 22:03:26,265 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-30 22:03:31,134 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 22.17 seconds (JVM running for 25.793)
+2022-08-30 22:03:35,528 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-30 22:03:43,530 WARN org.apache.catalina.util.SessionIdGeneratorBase [http-nio-8080-exec-7] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [451] milliseconds.
+2022-08-30 22:03:47,454 INFO Fuelling Service [http-nio-8080-exec-2] Information about fuelling station with id 3 ready for you
+2022-08-30 22:03:51,640 INFO Fuelling Service [http-nio-8080-exec-4] Information about fuelling station with id 3 ready for you
+2022-08-30 22:03:51,659 INFO Pump Service [http-nio-8080-exec-4] Information about pump with id 1 ready for you
+2022-08-30 22:03:51,676 INFO Product Service [http-nio-8080-exec-4] Information about product with id 2 ready for you
+2022-08-30 22:03:51,685 INFO Product Service [http-nio-8080-exec-4] Information about product with id 2 ready for you
+2022-08-30 22:03:51,692 INFO Product Service [http-nio-8080-exec-4] Information about product with id 2 ready for you
+2022-08-30 22:03:51,806 INFO Product Service [http-nio-8080-exec-4] Information about product with id 2 ready for you
+2022-08-30 22:03:55,768 INFO Fuelling Service [http-nio-8080-exec-9] Information about fuelling station with id 3 ready for you
+2022-08-30 22:03:55,798 INFO Pump Service [http-nio-8080-exec-9] Information about pump with id 1 ready for you
+2022-08-30 22:03:55,824 INFO Product Service [http-nio-8080-exec-9] Information about product with id 2 ready for you
+2022-08-30 22:03:55,836 INFO Product Service [http-nio-8080-exec-9] Information about product with id 2 ready for you
+2022-08-30 22:03:55,855 INFO Product Service [http-nio-8080-exec-9] Information about product with id 2 ready for you
+2022-08-30 22:03:55,914 INFO Product Service [http-nio-8080-exec-9] Information about product with id 2 ready for you
+2022-08-30 22:04:08,451 INFO Fuelling Service [http-nio-8080-exec-8] Information about fuelling station with id 3 ready for you
+2022-08-30 22:04:15,476 INFO Fuelling Service [http-nio-8080-exec-10] Information about fuelling station with id 3 ready for you
+2022-08-30 22:04:15,494 INFO Pump Service [http-nio-8080-exec-10] Information about pump with id 1 ready for you
+2022-08-30 22:04:15,506 INFO Product Service [http-nio-8080-exec-10] Information about product with id 3 ready for you
+2022-08-30 22:04:15,512 INFO Product Service [http-nio-8080-exec-10] Information about product with id 3 ready for you
+2022-08-30 22:04:15,517 INFO Product Service [http-nio-8080-exec-10] Information about product with id 3 ready for you
+2022-08-30 22:04:15,541 INFO Product Service [http-nio-8080-exec-10] Information about product with id 3 ready for you
+2022-08-30 22:04:45,533 INFO Fuelling Service [http-nio-8080-exec-1] Information about fuelling station with id 3 ready for you
+2022-08-30 22:04:48,257 INFO Fuelling Service [http-nio-8080-exec-3] Information about fuelling station with id 3 ready for you
+2022-08-30 22:04:48,269 INFO Pump Service [http-nio-8080-exec-3] Information about pump with id 2 ready for you
+2022-08-30 22:04:48,279 INFO Product Service [http-nio-8080-exec-3] Information about product with id 3 ready for you
+2022-08-30 22:04:48,284 INFO Product Service [http-nio-8080-exec-3] Information about product with id 3 ready for you
+2022-08-30 22:04:48,288 INFO Product Service [http-nio-8080-exec-3] Information about product with id 3 ready for you
+2022-08-30 22:04:48,306 INFO Product Service [http-nio-8080-exec-3] Information about product with id 3 ready for you
+2022-08-30 22:07:01,929 INFO Fuelling Service [http-nio-8080-exec-1] Information about fuelling station with id 3 ready for you
+2022-08-30 22:07:04,172 INFO Fuelling Service [http-nio-8080-exec-4] Information about fuelling station with id 3 ready for you
+2022-08-30 22:07:04,184 INFO Pump Service [http-nio-8080-exec-4] Information about pump with id 1 ready for you
+2022-08-30 22:07:04,195 INFO Product Service [http-nio-8080-exec-4] Information about product with id 2 ready for you
+2022-08-30 22:07:04,199 INFO Product Service [http-nio-8080-exec-4] Information about product with id 2 ready for you
+2022-08-30 22:07:04,204 INFO Product Service [http-nio-8080-exec-4] Information about product with id 2 ready for you
+2022-08-30 22:07:04,228 INFO Product Service [http-nio-8080-exec-4] Information about product with id 2 ready for you
+2022-08-30 22:08:05,548 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-30 22:08:05,572 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-30 22:08:19,096 INFO com.logos.fulltank.FulltankApplication [main] Starting FulltankApplication using Java 11.0.14 on DESKTOP-5LINHUV with PID 5788 (C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank\target\classes started by nazar in C:\Users\nazar\Desktop\Java Logos\6.Advanced\fulltank)
+2022-08-30 22:08:19,106 INFO com.logos.fulltank.FulltankApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-30 22:08:25,063 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-30 22:08:25,066 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 22:08:25,389 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-30 22:08:25,969 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-30 22:08:26,067 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-30 22:08:26,392 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-30 22:08:26,717 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-30 22:08:27,764 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-30 22:08:27,833 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-30 22:08:30,051 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-30 22:08:36,362 INFO com.logos.fulltank.FulltankApplication [main] Started FulltankApplication in 18.928 seconds (JVM running for 22.241)
+2022-08-30 22:08:42,975 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-5] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-30 22:08:43,596 WARN org.apache.catalina.util.SessionIdGeneratorBase [http-nio-8080-exec-5] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [396] milliseconds.
