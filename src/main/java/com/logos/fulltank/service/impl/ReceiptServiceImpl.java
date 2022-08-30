@@ -7,6 +7,7 @@ import com.logos.fulltank.service.ReceiptService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 @Service
 @Slf4j(topic = "Receipt Service")
@@ -33,5 +34,10 @@ public class ReceiptServiceImpl implements ReceiptService {
             log.error("Receipt with id " + id + " is not exist");
             throw new ReceiptNotFoundException("Receipt with id " + id + " is not exist");
         }
+    }
+
+    @Override
+    public List<Receipt> getReceiptByUserId(int id) {
+        return receiptDao.findReceiptByUserId(id);
     }
 }

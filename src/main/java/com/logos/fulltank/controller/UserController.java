@@ -1,9 +1,11 @@
 package com.logos.fulltank.controller;
 
+import com.logos.fulltank.entity.Receipt;
 import com.logos.fulltank.entity.User;
 import com.logos.fulltank.exception.IncorrectCredsExceptions;
 import com.logos.fulltank.exception.UserAlreadyExistException;
 import com.logos.fulltank.exception.UserNotFoundException;
+import com.logos.fulltank.service.ReceiptService;
 import com.logos.fulltank.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.SQLException;
+import java.util.List;
 
 
 @Controller
@@ -25,13 +28,15 @@ import java.sql.SQLException;
 public class UserController {
 
     private final UserService userService;
+    private final ReceiptService receiptService;
 
     public final PasswordEncoder passwordEncoder;
 
 
 
-    public UserController(UserService userService, PasswordEncoder passwordEncoder) {
+    public UserController(UserService userService, ReceiptService receiptService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
+        this.receiptService = receiptService;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -92,6 +97,8 @@ public class UserController {
     public String cabinet(Model model, Authentication authentication) {
         User user = userService.getUserByEmail(authentication.getName());
         model.addAttribute("user", user);
+        List<Receipt> receipts = receiptService.getReceiptByUserId(user.getId());
+        model.addAttribute("receipts",receipts);
         return "cabinet";
     }
 

@@ -76,19 +76,24 @@ public class FuellingStationController {
         return "foundFuellingStationPage";
     }
 
-    @GetMapping("/{id}/buy")
-    public String buyFuel(Model model, @RequestParam double amount, @RequestParam int productId, @PathVariable int id, Authentication authentication) throws FuellingStationNotFoundException, ProductNotFoundException {
+    @GetMapping("/buy")
+    public String buyFuel(Model model, @RequestParam double amount, @RequestParam int productId, @RequestParam int fuellingStationId,
+                          Authentication authentication) throws FuellingStationNotFoundException, ProductNotFoundException {
         User user = userService.getUserByEmail(authentication.getName());
         model.addAttribute("user", user);
-        FuellingStation fuellingStation = fuellingStationService.getById(id);
+        FuellingStation fuellingStation = fuellingStationService.getById(fuellingStationId);
         model.addAttribute("fuellingStation", fuellingStation);
-        receiptService.createReceipt(new Receipt(new Date(System.currentTimeMillis()),
+        Receipt receipt = receiptService.createReceipt(new Receipt(new Date(System.currentTimeMillis()),
                 productService.getById(productId).getNameOfFuel(),
                 productService.getById(productId).getPricePerLiterInHrn(),
                 amount,
                 productService.getById(productId).getPricePerLiterInHrn() * amount,
                 user
         ));
+        Product product = productService.getById(productId);
+        model.addAttribute("product",product);
+        model.addAttribute("amount",amount);
+        model.addAttribute("receipt",receipt);
         return "receipt";
     }
 }

@@ -21,15 +21,18 @@
     <p>Fuelling pumps:</p>
     <div class="pump_block" th:each="pump:${fuellingStation.pumpSet}"><span th:text="${pump.pumpName}"></span>
         <div th:each="product:${fuellingStation.products}">
-            <ul>
-                <li>Fuel: <span th:text="${product.nameOfFuel}"></span>
-                    <span hidden id="id" th:text="${product.id}"></span>
-                </li>
-<!--                //перевірити-->
+            <ul th:onmouseover="'javascript:createButton(\'' +${product.id}+ '_button'+${pump.id}+'\');'"
+                th:onmouseout="'javascript:deleteButton(\'' +${product.id}+ '_button'+${pump.id}+'\');'">
+                <li>Fuel: <span th:text="${product.nameOfFuel}"></span></li>
+                <!--                //перевірити-->
                 <li>Price: <span id="price" th:text=" ${product.pricePerLiterInHrn}"></span></li>
                 <li>Real amount: <span th:text="${product.availableAmountOfFuel}"></span></li>
-                <p>
-                    <button onclick="myFunction()">BUY</button>
+
+                <button th:attr="id=${product.id}+_button+${pump.id}" hidden
+                        th:onclick="'javascript:myFunction(\'' +${product.id}+'\',\''+${fuellingStation.id}+'\');'">
+                    CHOOSE
+                </button>
+
             </ul>
 
             <hr>
@@ -37,13 +40,19 @@
     </div>
 </div>
 <script>
-    function myFunction() {
-        let id = document.getElementById("id");
-        let amount = prompt("Please enter amount of fuel", "10");
-        const url = 'http://localhost:8080/fuellingStation/id/buy?amount=' + amount & +'&productId=' + id;
-        window.open(url, "_self");
+    function createButton(id) {
+        document.getElementById(id).hidden = false;
     }
 
+    function deleteButton(id) {
+        document.getElementById(id).hidden = true;
+    }
+
+    function myFunction(product_id, fuellingStation_id) {
+        let amount = prompt("Please enter amount of fuel", "10");
+        const url = 'http://localhost:8080/fuellingStation/buy?amount=' + amount + '&productId=' + product_id + '&fuellingStationId=' + fuellingStation_id;
+        window.open(url, "_self");
+    }
 </script>
 </body>
 </html>
