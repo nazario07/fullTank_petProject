@@ -1,5 +1,6 @@
 package com.logos.fulltank.service;
 
+import com.logos.fulltank.dao.FuellingStationDao;
 import com.logos.fulltank.entity.FuellingStation;
 import com.logos.fulltank.exception.FuellingStationNotFoundException;
 

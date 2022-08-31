@@ -39,6 +39,11 @@ public class Product {
                 '}';
     }
 
+    public Product( FuelName nameOfFuel, double pricePerLiterInHrn) {
+        this.nameOfFuel = nameOfFuel;
+        this.pricePerLiterInHrn = pricePerLiterInHrn;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -12,7 +12,7 @@ public interface FuellingStationDao extends JpaRepository<FuellingStation, Integ
     String HAVERSINE_FORMULA = "(6371 * acos(cos(radians(:latitude)) * cos(radians(fs.latitude)) *" +
             " cos(radians(fs.longitude) - radians(:longitude)) + sin(radians(:latitude)) * sin(radians(fs.latitude))))";
 
-    @Query(value = "SELECT * FROM fuelling_station fs WHERE " + HAVERSINE_FORMULA + " < :radius ORDER BY " + HAVERSINE_FORMULA + " DESC", nativeQuery = true)
+    @Query(value = "SELECT * FROM fuelling_station fs WHERE " + HAVERSINE_FORMULA + " < :radius ORDER BY " + HAVERSINE_FORMULA + " ASC", nativeQuery = true)
     List<FuellingStation> findClosestFuellingStationInRadius(double latitude, double longitude, int radius);
 
     @Query(value = "SELECT * FROM fuelling_station fs ORDER BY " + HAVERSINE_FORMULA + " LIMIT 1", nativeQuery = true)

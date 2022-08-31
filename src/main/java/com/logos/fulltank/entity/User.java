@@ -34,6 +34,14 @@ public class User implements UserDetails {
     @Column(name = "role")
     private Role role = Role.USER;
 
+    public User(String firstName, String lastName, String email, String password, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.age = age;
+    }
+
     @OneToMany(mappedBy = "user",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Receipt> receipts;
 
