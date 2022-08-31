@@ -1,6 +1,7 @@
 package com.logos.fulltank.controller;
 
 import com.logos.fulltank.entity.Receipt;
+import com.logos.fulltank.entity.Role;
 import com.logos.fulltank.entity.User;
 import com.logos.fulltank.exception.IncorrectCredsExceptions;
 import com.logos.fulltank.exception.UserAlreadyExistException;
@@ -86,7 +87,7 @@ public class UserController {
 
     @PreAuthorize("hasAnyAuthority({'ADMIN','USER'})")
     @GetMapping("/workPage")
-    public String fuelShop(Model model, Authentication authentication) {
+    public String fuelShop(Model model, Authentication authentication) throws UserNotFoundException {
         User user = userService.getUserByEmail(authentication.getName());
         model.addAttribute("user", user);
         return "workPage";
@@ -94,7 +95,7 @@ public class UserController {
 
     @PreAuthorize("hasAnyAuthority({'ADMIN','USER'})")
     @GetMapping("/cabinet")
-    public String cabinet(Model model, Authentication authentication) {
+    public String cabinet(Model model, Authentication authentication) throws UserNotFoundException {
         User user = userService.getUserByEmail(authentication.getName());
         model.addAttribute("user", user);
         List<Receipt> receipts = receiptService.getReceiptByUserId(user.getId());

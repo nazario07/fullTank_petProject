@@ -22,8 +22,8 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="workPage.html" th:href="@{http://localhost:8080/workPage}"
                        class="nav-link px-2 text-white">Home</a></li>
-                <li th:if="${user.role=='ADMIN'}">
-                    <a href="registrationFS.html" th:href="@{http://localhost:8080/fuellingStation/registration}"
+                <li th:switch="${user.role.name}">
+                    <a th:case="'ADMIN'" href="registrationFS.html" th:href="@{http://localhost:8080/fuellingStation/registration}"
                        class="nav-link px-2 text-white">Create Fuelling Station</a></li>
                 <li><a href="https://www.google.com.ua/maps/" class="nav-link px-2 text-white">Google Maps</a></li>
                 <li><a href="cabinet.html" th:href="@{http://localhost:8080/cabinet}"
@@ -36,7 +36,6 @@
 
         </div>
     </div>
-    </div>
 </header>
 <div class="main">
     <p>Click the button to get your coordinates and find the nearest stations</p>
@@ -44,6 +43,9 @@
     <label for="radius"><b>If you need, enter radius</b></label>
     <input type="number" placeholder="Enter Radius" name="radius" id="radius" value="0" required>
 
+</div>
+<div class="main">
+    <video id width=60% autoplay muted th:src="@{/video/video2.mp4}"> </video>
 </div>
 
 <script>
@@ -64,8 +66,6 @@
         const url = 'http://localhost:8080/fuellingStation/stations?latitude=' + latitude + '&longitude=' + longitude +
             '&radius=' + radius;
         window.open(url, "_self");
-
-
     }
 </script>
 

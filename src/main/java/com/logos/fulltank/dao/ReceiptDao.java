@@ -1,8 +1,6 @@
 package com.logos.fulltank.dao;
 
-import com.logos.fulltank.entity.FuellingStation;
 import com.logos.fulltank.entity.Receipt;
-import com.logos.fulltank.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

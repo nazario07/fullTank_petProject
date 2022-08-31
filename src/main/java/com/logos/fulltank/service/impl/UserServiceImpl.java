@@ -7,13 +7,8 @@ import com.logos.fulltank.exception.UserAlreadyExistException;
 import com.logos.fulltank.exception.UserNotFoundException;
 import com.logos.fulltank.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
 import java.util.Optional;
 
 @Service
@@ -29,7 +24,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User createUser(User user) throws UserAlreadyExistException {
         if (checkIfExist(user.getEmail())) {
-            log.info("Created new user" + user.toString());
+            log.info("Created new user" + user);
             return userDao.save(user);
         } else {
             log.error("User with email " + user.getEmail() + " is already exist");
@@ -50,12 +45,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByEmail(String email) {
-        return userDao.findUserByEmail(email).get();
+    public User getUserByEmail(String email) throws UserNotFoundException {
+        Optional<User> userByEmail = userDao.findUserByEmail(email);
+        if (userByEmail.isPresent()) {
+            return userByEmail.get();
+        } else throw new UserNotFoundException("User with email" + email + " is not exist");
     }
 
     @Override
-    public boolean checkIfExist(String email){
+    public boolean checkIfExist(String email) {
         Optional<User> byId = userDao.findUserByEmail(email);
         return byId.isEmpty();
     }
@@ -82,7 +80,7 @@ public class UserServiceImpl implements UserService {
             log.info("User with id " + id + " was deleted");
         } else {
             log.error("User with id " + id + " is not exist");
-            throw new UserNotFoundException("Participant with id " + id + " is not exist");
+            throw new UserNotFoundException("User with id " + id + " is not exist");
         }
     }
 }

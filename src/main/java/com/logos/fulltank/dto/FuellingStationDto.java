@@ -4,10 +4,6 @@ import com.logos.fulltank.entity.Product;
 import com.logos.fulltank.entity.Pump;
 import lombok.Data;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.Set;
 

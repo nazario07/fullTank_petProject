@@ -4,6 +4,7 @@ import com.logos.fulltank.entity.*;
 import com.logos.fulltank.exception.FuellingStationNotFoundException;
 import com.logos.fulltank.exception.ProductNotFoundException;
 import com.logos.fulltank.exception.PumpNotFoundException;
+import com.logos.fulltank.exception.UserNotFoundException;
 import com.logos.fulltank.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
@@ -68,7 +69,7 @@ public class FuellingStationController {
 
     @GetMapping("/stations")
     public String getStations(Model model, @RequestParam double latitude, @RequestParam double longitude,
-                              @RequestParam int radius, Authentication authentication) {
+                              @RequestParam int radius, Authentication authentication) throws UserNotFoundException {
         User user = userService.getUserByEmail(authentication.getName());
         model.addAttribute("user", user);
         List<FuellingStation> listFuellingStations = fuellingStationService.getListFuellingStations(latitude, longitude, radius);
@@ -80,7 +81,7 @@ public class FuellingStationController {
     @GetMapping("/buy")
     public String buyFuel(Model model, @RequestParam double amount, @RequestParam int productId,
                           @RequestParam int fuellingStationId, @RequestParam int pumpId,
-                          Authentication authentication) throws FuellingStationNotFoundException, ProductNotFoundException, PumpNotFoundException {
+                          Authentication authentication) throws FuellingStationNotFoundException, ProductNotFoundException, PumpNotFoundException, UserNotFoundException {
         User user = userService.getUserByEmail(authentication.getName());
         model.addAttribute("user", user);
         FuellingStation fuellingStation = fuellingStationService.getById(fuellingStationId);
