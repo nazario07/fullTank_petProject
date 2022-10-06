@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/style/cabinet.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b0166f9752.js" crossorigin="anonymous"></script>
+
+    <title>Cabinet</title>
+</head>
+<body>
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="workPage.html" th:href="@{http://localhost:8080/workPage}"
+                       class="nav-link px-2 text-white">Home</a></li>
+                <li><a href="https://www.google.com.ua/maps/" class="nav-link px-2 text-white">Google Maps</a></li>
+                <li><a href="cabinet.html" th:href="@{http://localhost:8080/cabinet}"
+                       class="nav-link px-2 text-white">Cabinet</a></li>
+            </ul>
+
+            <a th:href="@{http://localhost:8080/logout}" id="logout">
+                <button type="button" onclick="localStorage.clear()" class="btn btn-warning">Logout</button>
+            </a>
+
+        </div>
+    </div>
+</header>
+<main class="main">
+    <h1>Hello <span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></h1>
+    <h2>Your personal info:</h2>
+    <div class="user_block">
+        <ul>
+            <li>Your id: <span th:text="${user.id}"></span></li>
+            <li>Your email: <span th:text="${user.email}"></span></li>
+            <li>Your age: <span th:text="${user.age}"></span></li>
+        </ul>
+    </div>
+    <button onclick="showReceipts()">Purchase history</button>
+    <div hidden id="receipts">
+        <div th:each="receipt:${receipts}">
+            <h2>Receipt#<span th:text="${receipt.id}"></span></h2>
+            <ul>
+                <li><b>Date:</b> <span th:text="${receipt.date}"></span></li>
+                <li><b>Product:</b> <span th:text="${receipt.productName}"></span></li>
+                <li><b>Pump:</b> <span th:text="${receipt.pump}"></span></li>
+                <li><b>Amount:</b> <span th:text="${receipt.amount}"></span></li>
+                <li><b>Price:</b> <span th:text="${receipt.price}"></span></li>
+                <li><b>Total: <span th:text="${receipt.total}"></span></b></li>
+            </ul>
+        </div>
+    </div>
+</main>
+<script>
+    function showReceipts() {
+        document.getElementById("receipts").hidden = document.getElementById("receipts").hidden === false;
+    }
+</script>
+</body>
+</html>

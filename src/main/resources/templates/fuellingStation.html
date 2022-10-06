@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b0166f9752.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" th:href="@{/style/FuellingStation.css}">
+    <title>Fuelling station</title>
+</head>
+<body>
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="workPage.html" th:href="@{http://localhost:8080/workPage}"
+                       class="nav-link px-2 text-white">Home</a></li>
+                <li><a href="https://www.google.com.ua/maps/" class="nav-link px-2 text-white">Google Maps</a></li>
+                <li><a href="cabinet.html" th:href="@{http://localhost:8080/cabinet}"
+                       class="nav-link px-2 text-white">Cabinet</a></li>
+            </ul>
+
+            <a th:href="@{http://localhost:8080/logout}" id="logout">
+                <button type="button" onclick="localStorage.clear()" class="btn btn-warning">Logout</button>
+            </a>
+
+        </div>
+    </div>
+</header>
+<div class="fuelling_station_block">
+    <h2>Fuelling station info <span th:text="${fuellingStation.id}"></span></h2>
+    <ul>
+        <li>Brand <span th:text="${fuellingStation.providerOrBrand}"></span></li>
+        <li>Address: <span th:text="${fuellingStation.address}"></span></li>
+        <li>Number of Pumps: <span th:text="${fuellingStation.numberOfPumps}"></span></li>
+        <li>Latitude AND Longitude: <span th:text="${fuellingStation.latitude}"></span>;<span
+                th:text="${fuellingStation.longitude}"></span></li>
+    </ul>
+    <p>Fuelling pumps:</p>
+    <div class="pump_block" th:each="pump:${fuellingStation.pumpSet}"><span th:text="${pump.pumpName}"></span>
+        <div th:each="product:${fuellingStation.products}">
+            <ul th:onmouseover="'javascript:createButton(\'' +${product.id}+ '_button'+${pump.id}+'\');'"
+                th:onmouseout="'javascript:deleteButton(\'' +${product.id}+ '_button'+${pump.id}+'\');'">
+                <li>Fuel: <span th:text="${product.nameOfFuel}"></span></li>
+                <!--                //перевірити-->
+                <li>Price: <span id="price" th:text=" ${product.pricePerLiterInHrn}"></span></li>
+                <li>Real amount: <span th:text="${product.availableAmountOfFuel}"></span></li>
+
+                <button th:attr="id=${product.id}+_button+${pump.id}" hidden
+                        th:onclick="'javascript:myFunction(\'' +${product.id}+'\',\''+${fuellingStation.id}+'\',\''+${pump.id}+'\');'">
+                    CHOOSE
+                </button>
+
+            </ul>
+
+            <hr>
+        </div>
+    </div>
+</div>
+<script>
+    function createButton(id) {
+        document.getElementById(id).hidden = false;
+    }
+
+    function deleteButton(id) {
+        document.getElementById(id).hidden = true;
+    }
+
+    function myFunction(product_id, fuellingStation_id, pump_id) {
+        let amount = prompt("Please enter amount of fuel", "10");
+        const url = 'http://localhost:8080/fuellingStation/buy?amount=' + amount + '&productId=' + product_id + '&fuellingStationId=' + fuellingStation_id + '&pumpId=' + pump_id;
+        window.open(url, "_self");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.user_block{
+    margin: 10px;
+}
+.user_block span{
+    color: darkgreen;
+}
+.main{
+    text-align: center;
+    margin: 10px auto;
+}
